@@ -25,8 +25,7 @@ public class JmsConnectorSE implements JmsConnector {
 	private Logger log;
 
 	@Inject
-	@Config(value = "cdi-jms-activemq-se.broker.url",
-			defaultValue = "broker:(vm://localhost)?persistent=false&deleteAllMessagesOnStartup=true&schedulerSupport=true&maximumRedeliveries=0")
+	@Config(value = "cdi-jms-activemq-se.broker.url", defaultValue = "failover:(tcp://127.0.0.1:61616)")
 	private String brokerUrl;
 
 	@Produces

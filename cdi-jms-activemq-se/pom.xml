@@ -35,6 +35,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-client-jakarta</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>jakarta.enterprise</groupId>
 			<artifactId>jakarta.enterprise.cdi-api</artifactId>
 			<scope>provided</scope>
@@ -42,11 +48,6 @@
 		<dependency>
 			<groupId>jakarta.jms</groupId>
 			<artifactId>jakarta.jms-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-client-jakarta</artifactId>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

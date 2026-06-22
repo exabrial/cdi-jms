@@ -25,6 +25,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.github.exabrial.cdi.jms</groupId>
+			<artifactId>cdi-jms-activemq-se</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>jakarta.ejb</groupId>
 			<artifactId>jakarta.ejb-api</artifactId>
 			<scope>provided</scope>
