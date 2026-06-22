@@ -29,6 +29,11 @@
 			<artifactId>cdi-jms-activemq-se</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.github.exabrial.cdi.jms</groupId>
+			<artifactId>cdi-jms-defaults</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>jakarta.ejb</groupId>
@@ -44,6 +49,17 @@
 			<groupId>jakarta.jms</groupId>
 			<artifactId>jakarta.jms-api</artifactId>
 			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>jakarta.json.bind</groupId>
+			<artifactId>jakarta.json.bind-api</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.johnzon</groupId>
+			<artifactId>johnzon-jsonb</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 </project>
