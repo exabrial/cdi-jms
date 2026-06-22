@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.github.exabrial.cdi.jms</groupId>
+		<artifactId>cdi-jms-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>cdi-jms</artifactId>
+	<packaging>jar</packaging>
+	<name>${project.artifactId}</name>
+	<description>JMS sender: fire-and-forget message sending with @Transacted and @NonTransacted variants</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.github.exabrial.cdi</groupId>
+			<artifactId>cdi-common</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.exabrial.cdi.jms</groupId>
+			<artifactId>cdi-jms-transport-api</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.exabrial.cdi.nanoscopes</groupId>
+			<artifactId>nanoscopes</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>jakarta.enterprise</groupId>
+			<artifactId>jakarta.enterprise.cdi-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.interceptor</groupId>
+			<artifactId>jakarta.interceptor-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.jms</groupId>
+			<artifactId>jakarta.jms-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
