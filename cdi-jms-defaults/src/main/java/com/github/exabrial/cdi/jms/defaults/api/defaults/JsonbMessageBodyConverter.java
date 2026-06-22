@@ -10,6 +10,7 @@ import jakarta.json.bind.Jsonb;
 import org.slf4j.Logger;
 
 import com.github.exabrial.cdi.jms.api.MessageBodyConverter;
+import com.github.exabrial.cdi.nanoscopes.boundaryscoped.api.interceptor.Boundary;
 
 /**
  * Default MessageBodyConverter backed by JSON-B. Swap in a different wire format by declaring an @Alternative MessageBodyConverter and
@@ -19,6 +20,7 @@ import com.github.exabrial.cdi.jms.api.MessageBodyConverter;
  */
 @Default
 @ApplicationScoped
+@Boundary
 public class JsonbMessageBodyConverter implements MessageBodyConverter {
 	@Inject
 	private Logger log;

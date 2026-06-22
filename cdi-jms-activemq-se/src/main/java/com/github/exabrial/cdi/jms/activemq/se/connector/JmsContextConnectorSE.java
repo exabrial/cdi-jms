@@ -37,7 +37,7 @@ public class JmsContextConnectorSE implements JmsContextConnector {
 	@BoundaryScoped
 	JMSContext createNonTransactedJmsContext() {
 		log.trace("createNonTransactedJmsContext() opening non-transactional JMSContext");
-		return connectionFactory.createContext(JMSContext.AUTO_ACKNOWLEDGE);
+		return connectionFactory.createContext(null, null, JMSContext.AUTO_ACKNOWLEDGE);
 	}
 
 	void disposeNonTransactedJmsContext(@Disposes @NonTransacted final JMSContext jmsContext) {

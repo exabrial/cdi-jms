@@ -63,7 +63,7 @@ public class MessageListenerManager {
 			final int maxSessions = toMaxSessions(activationConfig);
 
 			for (int sessionIndex = 0; sessionIndex < maxSessions; sessionIndex++) {
-				final JMSContext jmsContext = connectionFactory.createContext(JMSContext.AUTO_ACKNOWLEDGE);
+				final JMSContext jmsContext = connectionFactory.createContext(null, null, JMSContext.AUTO_ACKNOWLEDGE);
 				final Destination destination = lookupDestination(destinationName, destinationType, messageListenerClazz, jmsContext);
 				final JMSConsumer jmsConsumer = jmsContext.createConsumer(destination, selector);
 

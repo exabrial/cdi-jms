@@ -18,6 +18,11 @@
 			<artifactId>cdi-jms-api</artifactId>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.github.exabrial.cdi.nanoscopes</groupId>
+			<artifactId>nanoscopes</artifactId>
+			<scope>compile</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>jakarta.enterprise</groupId>

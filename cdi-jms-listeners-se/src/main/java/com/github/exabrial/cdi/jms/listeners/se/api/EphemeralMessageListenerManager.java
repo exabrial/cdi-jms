@@ -124,7 +124,7 @@ public class EphemeralMessageListenerManager {
 		final String destinationName = toDestinationName(destination, params);
 		final String selector = toSelector(params);
 
-		final JMSContext jmsContext = connectionFactory.createContext(JMSContext.AUTO_ACKNOWLEDGE);
+		final JMSContext jmsContext = connectionFactory.createContext(null, null, JMSContext.AUTO_ACKNOWLEDGE);
 		final Destination jmsDestination = MessageListenerManager.lookupDestination(destinationName, destinationType.getName(),
 				messageListener.getClass(), jmsContext);
 		final JMSConsumer jmsConsumer = jmsContext.createConsumer(jmsDestination, selector);
