@@ -1,5 +1,6 @@
 package com.github.exabrial.cdi.jms.activemq.se.connector;
 
+import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Alternative;
 import jakarta.enterprise.inject.Disposes;
@@ -19,6 +20,7 @@ import com.github.exabrial.cdi.jms.internal.api.JmsConnector;
  * @author jonathan.fisher
  */
 @Alternative
+@Priority(1000)
 @ApplicationScoped
 public class JmsConnectorSE implements JmsConnector {
 	@Inject

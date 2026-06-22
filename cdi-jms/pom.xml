@@ -20,7 +20,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.github.exabrial.cdi.jms</groupId>
-			<artifactId>cdi-jms-transport-api</artifactId>
+			<artifactId>cdi-jms-api</artifactId>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>

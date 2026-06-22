@@ -5,8 +5,4 @@
 	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/beans_4_0.xsd"
 	bean-discovery-mode="annotated"
 	version="4.0">
-	<alternatives>
-		<class>com.github.exabrial.cdi.jms.activemq.se.connector.JmsConnectorSE</class>
-		<class>com.github.exabrial.cdi.jms.activemq.se.connector.JmsContextConnectorSE</class>
-	</alternatives>
 </beans>

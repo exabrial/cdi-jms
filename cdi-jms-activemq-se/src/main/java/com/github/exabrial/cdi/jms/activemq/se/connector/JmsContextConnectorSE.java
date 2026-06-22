@@ -1,5 +1,6 @@
 package com.github.exabrial.cdi.jms.activemq.se.connector;
 
+import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Alternative;
 import jakarta.enterprise.inject.Disposes;
@@ -23,6 +24,7 @@ import com.github.exabrial.cdi.nanoscopes.boundaryscoped.api.scope.BoundaryScope
  * @author jonathan.fisher
  */
 @Alternative
+@Priority(1000)
 @ApplicationScoped
 public class JmsContextConnectorSE implements JmsContextConnector {
 	@Inject

@@ -7,7 +7,7 @@
 		<artifactId>cdi-jms-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>cdi-jms-transport-api</artifactId>
+	<artifactId>cdi-jms-api</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 	<description>JMS transport API: MessageBodyConverter, qualifiers, connector interfaces</description>
@@ -19,6 +19,11 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
+			<scope>compile</scope>
+		</dependency>
 		<dependency>
 			<groupId>jakarta.enterprise</groupId>
 			<artifactId>jakarta.enterprise.cdi-api</artifactId>
