@@ -8,7 +8,9 @@ import org.slf4j.Logger;
 
 import com.github.exabrial.cdi.jms.api.qualifier.NonTransacted;
 import com.github.exabrial.cdi.jms.transport.wiremodel.model.JmsTransportErrorReply;
+import com.github.exabrial.cdi.nanoscopes.boundaryscoped.api.interceptor.Boundary;
 
+@Boundary
 @ApplicationScoped
 class JmsErrorReplyTransport {
 	@Inject

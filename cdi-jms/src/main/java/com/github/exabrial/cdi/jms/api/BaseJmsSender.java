@@ -15,7 +15,9 @@ import org.slf4j.Logger;
 import com.github.exabrial.cdi.common.errorhandling.interceptor.XaUuidInterceptor;
 import com.github.exabrial.cdi.jms.transport.wiremodel.model.DestinationParameters;
 import com.github.exabrial.cdi.jms.transport.wiremodel.util.JmsMessageUtil;
+import com.github.exabrial.cdi.nanoscopes.boundaryscoped.api.interceptor.Boundary;
 
+@Boundary
 abstract class BaseJmsSender implements JmsSender {
 	@Inject
 	private MessageBodyConverter bodyConverter;

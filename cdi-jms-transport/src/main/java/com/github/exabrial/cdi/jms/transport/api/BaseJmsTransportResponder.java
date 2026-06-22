@@ -19,7 +19,9 @@ import com.github.exabrial.cdi.common.errorhandling.interceptor.XaUuidIntercepto
 import com.github.exabrial.cdi.jms.api.MessageBodyConverter;
 import com.github.exabrial.cdi.jms.transport.wiremodel.model.JmsTransportErrorReply;
 import com.github.exabrial.cdi.jms.transport.wiremodel.util.JmsMessageUtil;
+import com.github.exabrial.cdi.nanoscopes.boundaryscoped.api.interceptor.Boundary;
 
+@Boundary
 abstract class BaseJmsTransportResponder implements JmsTransportResponder {
 	@Inject
 	private MessageBodyConverter bodyConverter;

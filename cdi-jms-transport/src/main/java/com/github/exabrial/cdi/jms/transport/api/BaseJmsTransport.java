@@ -27,7 +27,9 @@ import com.github.exabrial.cdi.jms.transport.wiremodel.model.exception.JmsTransp
 import com.github.exabrial.cdi.jms.transport.wiremodel.model.exception.RemoteInvocationException;
 import com.github.exabrial.cdi.jms.transport.wiremodel.model.exception.TimeoutWhileWaitingForReplyException;
 import com.github.exabrial.cdi.jms.transport.wiremodel.util.JmsMessageUtil;
+import com.github.exabrial.cdi.nanoscopes.boundaryscoped.api.interceptor.Boundary;
 
+@Boundary
 abstract class BaseJmsTransport implements JmsTransport {
 	static final String JMS_TRANSPORT_ERROR_REPLY = JmsTransport.class.getSimpleName() + ".isErrorReply";
 
