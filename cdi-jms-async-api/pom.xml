@@ -7,27 +7,16 @@
 		<artifactId>cdi-jms-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>cdi-jms-ee</artifactId>
+	<artifactId>cdi-jms-async-api</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
-	<description>Jakarta EE JMS context connector: produces @Transacted and @NonTransacted JMSContext from JNDI</description>
+	<description>JMS sender API: JmsSender interface</description>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.github.exabrial.cdi.jms</groupId>
 			<artifactId>cdi-jms-common</artifactId>
 			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>jakarta.enterprise</groupId>
-			<artifactId>jakarta.enterprise.cdi-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>jakarta.jms</groupId>
-			<artifactId>jakarta.jms-api</artifactId>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>

@@ -20,7 +20,7 @@ import org.slf4j.Logger;
 import com.github.exabrial.cdi.jms.listeners.se.internal.model.ListenerContext;
 import com.github.exabrial.cdi.jms.listeners.se.model.ListenerHandle;
 import com.github.exabrial.cdi.jms.listeners.se.model.ListenerState;
-import com.github.exabrial.cdi.jms.transport.wiremodel.model.DestinationParameters;
+import com.github.exabrial.cdi.jms.api.model.DestinationParameters;
 
 /**
  * Manages ephemeral MessageListener instances with caller-specified destinations. All operations are by handle.

@@ -7,15 +7,15 @@
 		<artifactId>cdi-jms-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>cdi-jms-ee</artifactId>
+	<artifactId>cdi-jms-common</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
-	<description>Jakarta EE JMS context connector: produces @Transacted and @NonTransacted JMSContext from JNDI</description>
+	<description>Shared CDI JMS types: MessageBodyConverter, qualifiers, connector SPIs, base exceptions, and message utilities</description>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.github.exabrial.cdi.jms</groupId>
-			<artifactId>cdi-jms-common</artifactId>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
 			<scope>compile</scope>
 		</dependency>
 

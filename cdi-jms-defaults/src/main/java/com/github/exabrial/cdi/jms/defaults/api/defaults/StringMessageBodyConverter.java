@@ -10,7 +10,7 @@ import jakarta.inject.Inject;
 import org.slf4j.Logger;
 
 import com.github.exabrial.cdi.jms.api.MessageBodyConverter;
-import com.github.exabrial.cdi.jms.transport.wiremodel.model.exception.JmsTransportException;
+import com.github.exabrial.cdi.jms.transport.model.exception.JmsTransportException;
 
 /**
  * Alternative MessageBodyConverter that uses toString() for serialization and a String constructor for deserialization. Enable in

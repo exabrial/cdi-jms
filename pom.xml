@@ -36,11 +36,13 @@
 	</developers>
 
 	<modules>
-		<module>cdi-jms-transport-wiremodel</module>
-		<module>cdi-jms-api</module>
-		<module>cdi-jms-defaults</module>
-		<module>cdi-jms</module>
+		<module>cdi-jms-common</module>
+		<module>cdi-jms-async-api</module>
+		<module>cdi-jms-async</module>
+		<module>cdi-jms-transport-model</module>
+		<module>cdi-jms-transport-api</module>
 		<module>cdi-jms-transport</module>
+		<module>cdi-jms-defaults</module>
 		<module>cdi-jms-ee</module>
 		<module>cdi-jms-activemq-se</module>
 		<module>cdi-jms-listeners-se</module>
@@ -49,18 +51,23 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.github.exabrial.cdi</groupId>
-				<artifactId>cdi-common</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
-			</dependency>
-			<dependency>
 				<groupId>com.github.exabrial.cdi.jms</groupId>
-				<artifactId>cdi-jms</artifactId>
+				<artifactId>cdi-jms-activemq-se</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.exabrial.cdi.jms</groupId>
-				<artifactId>cdi-jms-activemq-se</artifactId>
+				<artifactId>cdi-jms-async</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.exabrial.cdi.jms</groupId>
+				<artifactId>cdi-jms-async-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.exabrial.cdi.jms</groupId>
+				<artifactId>cdi-jms-common</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
@@ -85,19 +92,42 @@
 			</dependency>
 			<dependency>
 				<groupId>com.github.exabrial.cdi.jms</groupId>
-				<artifactId>cdi-jms-api</artifactId>
+				<artifactId>cdi-jms-transport-api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.exabrial.cdi.jms</groupId>
-				<artifactId>cdi-jms-transport-wiremodel</artifactId>
+				<artifactId>cdi-jms-transport-model</artifactId>
 				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.exabrial.cdi</groupId>
+				<artifactId>cdi-common</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.exabrial.cdi.nanoscopes</groupId>
 				<artifactId>nanoscopes</artifactId>
 				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-client-jakarta</artifactId>
+				<version>5.19.7</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.17.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.johnzon</groupId>
+				<artifactId>johnzon-jsonb</artifactId>
+				<version>2.0.2</version>
+			</dependency>
+
 			<dependency>
 				<groupId>jakarta.annotation</groupId>
 				<artifactId>jakarta.annotation-api</artifactId>
@@ -132,21 +162,6 @@
 				<groupId>jakarta.json.bind</groupId>
 				<artifactId>jakarta.json.bind-api</artifactId>
 				<version>3.0.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.activemq</groupId>
-				<artifactId>activemq-client-jakarta</artifactId>
-				<version>5.19.7</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-lang3</artifactId>
-				<version>3.17.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.johnzon</groupId>
-				<artifactId>johnzon-jsonb</artifactId>
-				<version>2.0.2</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

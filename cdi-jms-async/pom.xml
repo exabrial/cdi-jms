@@ -7,10 +7,10 @@
 		<artifactId>cdi-jms-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>cdi-jms-transport</artifactId>
+	<artifactId>cdi-jms-async</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
-	<description>JMS request/reply and scatter/gather transport with @Transacted and @NonTransacted variants</description>
+	<description>JMS sender: fire-and-forget message sending with @Transacted and @NonTransacted variants</description>
 
 	<dependencies>
 		<dependency>
@@ -20,7 +20,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.github.exabrial.cdi.jms</groupId>
-			<artifactId>cdi-jms-async</artifactId>
+			<artifactId>cdi-jms-async-api</artifactId>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
@@ -29,24 +29,8 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.github.exabrial.cdi.jms</groupId>
-			<artifactId>cdi-jms-transport-api</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.github.exabrial.cdi.jms</groupId>
-			<artifactId>cdi-jms-transport-model</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>com.github.exabrial.cdi.nanoscopes</groupId>
 			<artifactId>nanoscopes</artifactId>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
 			<scope>compile</scope>
 		</dependency>
 

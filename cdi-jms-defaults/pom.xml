@@ -15,7 +15,12 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.github.exabrial.cdi.jms</groupId>
-			<artifactId>cdi-jms-api</artifactId>
+			<artifactId>cdi-jms-common</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.exabrial.cdi.jms</groupId>
+			<artifactId>cdi-jms-transport-model</artifactId>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
