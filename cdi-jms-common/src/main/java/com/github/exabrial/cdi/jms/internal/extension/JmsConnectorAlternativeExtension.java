@@ -6,6 +6,7 @@ import java.util.Map;
 import jakarta.annotation.Priority;
 import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.inject.Alternative;
+import jakarta.enterprise.inject.spi.AnnotatedType;
 import jakarta.enterprise.inject.spi.Extension;
 import jakarta.enterprise.inject.spi.ProcessAnnotatedType;
 import jakarta.enterprise.inject.spi.ProcessBeanAttributes;
@@ -21,27 +22,24 @@ public class JmsConnectorAlternativeExtension implements Extension {
 
 	private final Map<Class<?>, Class<?>> winners = new HashMap<>();
 
-	<T extends JmsConnector> void observeJmsConnector(@Observes final ProcessAnnotatedType<T> pat) {
-		recordCandidate(JmsConnector.class, pat.getAnnotatedType().getJavaClass());
+	<T extends JmsConnector> void observeJmsConnector(@Observes final ProcessAnnotatedType<T> processAnnotatedType) {
+		recordCandidate(JmsConnector.class, processAnnotatedType.getAnnotatedType().getJavaClass());
 	}
 
-	<T extends JmsContextConnector> void observeJmsContextConnector(@Observes final ProcessAnnotatedType<T> pat) {
-		recordCandidate(JmsContextConnector.class, pat.getAnnotatedType().getJavaClass());
+	<T extends JmsContextConnector> void observeJmsContextConnector(@Observes final ProcessAnnotatedType<T> processAnnotatedType) {
+		recordCandidate(JmsContextConnector.class, processAnnotatedType.getAnnotatedType().getJavaClass());
 	}
 
-	void vetoLosers(@Observes final ProcessBeanAttributes<?> pba) {
-		final Class<?> beanClass = pba.getAnnotated() instanceof jakarta.enterprise.inject.spi.AnnotatedType<?> annotatedType
-				? annotatedType.getJavaClass()
-				: null;
-		if (beanClass == null) {
-			return;
-		}
-		if (JmsConnector.class.isAssignableFrom(beanClass) && !beanClass.equals(winners.get(JmsConnector.class))) {
-			log.info("vetoLosers() vetoing JmsConnector loser:{}", beanClass.getName());
-			pba.veto();
-		} else if (JmsContextConnector.class.isAssignableFrom(beanClass) && !beanClass.equals(winners.get(JmsContextConnector.class))) {
-			log.info("vetoLosers() vetoing JmsContextConnector loser:{}", beanClass.getName());
-			pba.veto();
+	void vetoLosers(@Observes final ProcessBeanAttributes<?> processBeanAttributes) {
+		if (processBeanAttributes.getAnnotated() instanceof final AnnotatedType<?> annotatedType) {
+			final Class<?> beanClass = annotatedType.getJavaClass();
+			if (JmsConnector.class.isAssignableFrom(beanClass) && !beanClass.equals(winners.get(JmsConnector.class))) {
+				log.info("vetoLosers() vetoing JmsConnector loser:{}", beanClass.getName());
+				processBeanAttributes.veto();
+			} else if (JmsContextConnector.class.isAssignableFrom(beanClass) && !beanClass.equals(winners.get(JmsContextConnector.class))) {
+				log.info("vetoLosers() vetoing JmsContextConnector loser:{}", beanClass.getName());
+				processBeanAttributes.veto();
+			}
 		}
 	}
 

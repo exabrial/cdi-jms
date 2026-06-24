@@ -21,12 +21,12 @@ import org.slf4j.Logger;
 import com.github.exabrial.cdi.common.config.api.model.annotation.Config;
 import com.github.exabrial.cdi.common.errorhandling.interceptor.XaUuidInterceptor;
 import com.github.exabrial.cdi.jms.api.MessageBodyConverter;
+import com.github.exabrial.cdi.jms.api.util.JmsMessageUtil;
 import com.github.exabrial.cdi.jms.transport.internal.model.JmsTransportErrorReply;
 import com.github.exabrial.cdi.jms.transport.internal.model.JmsTransportReply;
 import com.github.exabrial.cdi.jms.transport.model.exception.JmsTransportException;
 import com.github.exabrial.cdi.jms.transport.model.exception.RemoteInvocationException;
 import com.github.exabrial.cdi.jms.transport.model.exception.TimeoutWhileWaitingForReplyException;
-import com.github.exabrial.cdi.jms.api.util.JmsMessageUtil;
 import com.github.exabrial.cdi.nanoscopes.boundaryscoped.api.interceptor.Boundary;
 
 @Boundary

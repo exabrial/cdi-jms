@@ -23,8 +23,8 @@ public interface MessageBodyConverter {
 		try {
 			final String messageText = message.getBody(String.class);
 			return targetType.cast(messageText);
-		} catch (final JMSException jmse) {
-			throw new MessageBodyConversionException(message, targetType, jmse);
+		} catch (final JMSException jmsException) {
+			throw new MessageBodyConversionException(message, targetType, jmsException);
 		}
 	}
 }
