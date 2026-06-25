@@ -1,5 +1,6 @@
 package com.github.exabrial.cdi.jms.listeners.se.api;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+import jakarta.annotation.PreDestroy;
 import jakarta.ejb.ActivationConfigProperty;
 import jakarta.ejb.MessageDriven;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -46,6 +48,24 @@ public class MessageListenerManager {
 
 	private final Map<ListenerHandle, ListenerContext> handles = new ConcurrentHashMap<>();
 	private volatile long counter = 0;
+
+	@PreDestroy
+	void destroy() {
+		log.info("destroy() stopping all managed listeners handleCount:{}", handles.size());
+		for (final ListenerHandle handle : new ArrayList<>(handles.keySet())) {
+			final ListenerContext listenerContext = handles.remove(handle);
+			try {
+				listenerContext.getJmsContext().close();
+			} catch (final Exception exception) {
+				log.error("destroy() error closing JMSContext for handle:{}", handle, exception);
+			}
+			try {
+				listenerContext.getCreationalContext().release();
+			} catch (final Exception exception) {
+				log.error("destroy() error releasing CreationalContext for handle:{}", handle, exception);
+			}
+		}
+	}
 
 	public void start(final Class<? extends MessageListener> messageListenerClazz) {
 		log.info("start() starting messageListenerClazz:{}", messageListenerClazz.getName());

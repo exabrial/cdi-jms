@@ -22,7 +22,7 @@ public interface MessageBodyConverter {
 	default <K extends Serializable> K fromMessage(final Class<K> targetType, final Message message) {
 		try {
 			final String messageText = message.getBody(String.class);
-			return targetType.cast(messageText);
+			return fromText(targetType, messageText);
 		} catch (final JMSException jmsException) {
 			throw new MessageBodyConversionException(message, targetType, jmsException);
 		}

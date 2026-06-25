@@ -1,9 +1,11 @@
 package com.github.exabrial.cdi.jms.listeners.se.api;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import jakarta.annotation.PreDestroy;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.spi.CreationalContext;
 import jakarta.enterprise.inject.spi.Bean;
@@ -38,6 +40,18 @@ public class EphemeralMessageListenerManager {
 
 	private final Map<ListenerHandle, ListenerContext> handles = new ConcurrentHashMap<>();
 	private volatile long counter = 0;
+
+	@PreDestroy
+	void destroy() {
+		log.info("destroy() stopping all ephemeral listeners handleCount:{}", handles.size());
+		for (final ListenerHandle handle : new ArrayList<>(handles.keySet())) {
+			try {
+				stop(handle);
+			} catch (final Exception exception) {
+				log.error("destroy() error stopping handle:{}", handle, exception);
+			}
+		}
+	}
 
 	public ListenerHandle start(final Class<? extends MessageListener> messageListenerClazz,
 			final Class<? extends Serializable> destination, final Class<? extends Destination> destinationType,
