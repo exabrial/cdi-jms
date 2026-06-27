@@ -11,8 +11,8 @@ import jakarta.jms.JMSContext;
 
 import org.slf4j.Logger;
 
-import com.github.exabrial.cdi.jms.api.qualifier.NonTransacted;
-import com.github.exabrial.cdi.jms.api.qualifier.Transacted;
+import com.github.exabrial.cdi.common.api.qualifier.NonTransacted;
+import com.github.exabrial.cdi.common.api.qualifier.Transacted;
 import com.github.exabrial.cdi.jms.internal.api.JmsContextConnector;
 import com.github.exabrial.cdi.jms.transport.model.exception.JmsTransportException;
 import com.github.exabrial.cdi.nanoscopes.boundaryscoped.api.scope.BoundaryScoped;

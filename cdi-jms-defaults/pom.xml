@@ -14,6 +14,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.github.exabrial.cdi</groupId>
+			<artifactId>cdi-common</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
 			<groupId>com.github.exabrial.cdi.jms</groupId>
 			<artifactId>cdi-jms-common</artifactId>
 			<scope>compile</scope>

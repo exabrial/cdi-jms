@@ -4,7 +4,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.jms.JMSContext;
 
-import com.github.exabrial.cdi.jms.api.qualifier.Transacted;
+import com.github.exabrial.cdi.common.api.qualifier.Transacted;
 
 @Transacted
 @ApplicationScoped

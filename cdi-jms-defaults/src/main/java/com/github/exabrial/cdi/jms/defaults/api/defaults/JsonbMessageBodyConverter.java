@@ -9,6 +9,7 @@ import jakarta.json.bind.Jsonb;
 
 import org.slf4j.Logger;
 
+import com.github.exabrial.cdi.common.api.qualifier.NonTransacted;
 import com.github.exabrial.cdi.jms.api.MessageBodyConverter;
 import com.github.exabrial.cdi.nanoscopes.boundaryscoped.api.interceptor.Boundary;
 
@@ -25,6 +26,7 @@ public class JsonbMessageBodyConverter implements MessageBodyConverter {
 	@Inject
 	private Logger log;
 	@Inject
+	@NonTransacted
 	private Jsonb jsonb;
 
 	@Override

@@ -9,8 +9,8 @@ import jakarta.jms.JMSContext;
 
 import org.slf4j.Logger;
 
-import com.github.exabrial.cdi.jms.api.qualifier.NonTransacted;
-import com.github.exabrial.cdi.jms.api.qualifier.Transacted;
+import com.github.exabrial.cdi.common.api.qualifier.NonTransacted;
+import com.github.exabrial.cdi.common.api.qualifier.Transacted;
 import com.github.exabrial.cdi.jms.internal.api.JmsContextConnector;
 
 /**

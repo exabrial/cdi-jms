@@ -6,7 +6,7 @@ import jakarta.jms.Message;
 
 import org.slf4j.Logger;
 
-import com.github.exabrial.cdi.jms.api.qualifier.NonTransacted;
+import com.github.exabrial.cdi.common.api.qualifier.NonTransacted;
 import com.github.exabrial.cdi.jms.transport.internal.model.JmsTransportErrorReply;
 import com.github.exabrial.cdi.nanoscopes.boundaryscoped.api.interceptor.Boundary;
 
